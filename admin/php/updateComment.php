@@ -1,0 +1,29 @@
+<?php
+session_start();
+$_SESSION['update'] = 'Failed';
+include "../../php/connection/connect.php"; 
+$qid = $_POST['id'];
+/*$name = $_POST['name'];
+$username = $_POST['emailId'];
+$password = $_POST['newpassword'];*/
+$_SESSION['update'] = $qid;
+
+//echo $question;
+
+ /*	$updateEmployeeQuery = "update admin set Name = '$name' , username ='$username' , password = '$password'
+				            where id = $qid;";
+    $updateEmployeeQueryresult = mysqli_query($conn, $updateEmployeeQuery);
+    if($updateEmployeeQueryresult)
+	{
+		$_SESSION['update'] = 'Updated Successfully';
+		header("Location:http://localhost/employeeSUS/admin/pages/changePassword.php");
+	}
+	else
+	{
+		$_SESSION['update'] = 'Error Occured';
+		header("Location:http://localhost/employeeSUS/admin/pages/changePassword.php");
+	}
+*/
+
+	 
+?>
