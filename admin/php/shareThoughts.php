@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['update'] = 'Failed';
+#$_SESSION['update'] = 'Failed';
 include "../../php/connection/connect.php"; 
 #$qid = $_POST['id'];
 /*$name = $_POST['name'];
@@ -24,12 +24,12 @@ $thoughts = $_POST['thoughts'];
     $insertThoughtsIdQueryresult = mysqli_query($conn, $insertThoughtsIdQuery);
     if($insertThoughtsIdQueryresult)
 	{
-		$_SESSION['update'] = 'Inserted Successfully';
+		#$_SESSION['update'] = 'Inserted Successfully';
 		header("Location:http://localhost/employeeSUS/admin/pages/thoughts.php");
 	}
 	else
 	{
-		$_SESSION['update'] = 'Error Occured';
+		#$_SESSION['update'] = 'Error Occured';
 		header("Location:http://localhost/employeeSUS/admin/pages/thoughts.php");
 	}
 
