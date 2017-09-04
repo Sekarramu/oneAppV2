@@ -104,13 +104,13 @@ $username = $_SESSION['adminID'];
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Pages / Admin Home</li>
+				<li class="active">Pages / Thoughts</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Admin Details</h1>
+				<h1 class="page-header">Every Question Deserves An Answer</h1>
 			</div>
 		</div><!--/.row-->
 		<div class="row">
@@ -128,9 +128,9 @@ $username = $_SESSION['adminID'];
                 <h3 class="panel-title">Wall</h3>
               </div>
               <div class="panel-body">
-                <form>
+                <form action="../php/shareThoughts.php" method="POST" >
                   <div class="form-group">
-                    <textarea class="form-control" placeholder="Write on the wall"></textarea>
+                    <textarea class="form-control" name="thoughts" placeholder="Write on the wall"></textarea>
                   </div>
                   <button type="submit" class="btn btn-default">Submit</button>
                   <div class="pull-right">
@@ -145,7 +145,7 @@ $username = $_SESSION['adminID'];
             </div>
 			<?php
 
-								$fetchThoughtsQuery = "select * from thoughts";
+								$fetchThoughtsQuery = "select * from thoughts order by id DESC";
 								$fetchThoughtsQueryResult = mysqli_query($conn, $fetchThoughtsQuery);
 								while ($fetchThoughtsRow = $fetchThoughtsQueryResult->fetch_assoc()) {
 								$thoughtId = $fetchThoughtsRow['id'];
@@ -174,7 +174,8 @@ $username = $_SESSION['adminID'];
 		   echo  '          <div class="comment-form">';
            echo  '            <form class="form-inline" action="../php/updateComment.php" method="POST" >';
            echo  '             <div class="form-group">';
-           echo  '               <input type="text" class="form-control" placeholder="enter comment">';
+           echo  '               <input type="text" class="form-control" name="comment" id="comment" placeholder="enter comment">';
+		   echo  '               <input type="hidden" class="form-control" name="thought" id="thought" value='.$fetchThoughtsRow['id'].'>';
            echo  '             </div>';
            echo  '             <button type="submit" class="btn btn-default">Add</button>';
            echo  '           </form>';

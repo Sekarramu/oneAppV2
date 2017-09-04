@@ -2,28 +2,38 @@
 session_start();
 $_SESSION['update'] = 'Failed';
 include "../../php/connection/connect.php"; 
-$qid = $_POST['id'];
+#$qid = $_POST['id'];
 /*$name = $_POST['name'];
-$username = $_POST['emailId'];
+$username = $_POST['thoughtsId'];
 $password = $_POST['newpassword'];*/
-$_SESSION['update'] = $qid;
+$email = $_SESSION['adminID'];
+$thoughtID = $_POST['thought'];
+$comment = $_POST['comment'];
 
-//echo $question;
 
- /*	$updateEmployeeQuery = "update admin set Name = '$name' , username ='$username' , password = '$password'
-				            where id = $qid;";
-    $updateEmployeeQueryresult = mysqli_query($conn, $updateEmployeeQuery);
-    if($updateEmployeeQueryresult)
+    $getCommentIdQuery = "select max(id) as id from comments";
+	$getCommentIdQueryresult = mysqli_query($conn, $getCommentIdQuery);
+	
+	if($getCommentIdQueryresult)
 	{
-		$_SESSION['update'] = 'Updated Successfully';
-		header("Location:http://localhost/employeeSUS/admin/pages/changePassword.php");
+	$commentidRow = mysqli_fetch_assoc($getCommentIdQueryresult);
+	$commentid = $commentidRow['id'];
+	$commentid = $commentid + 1;
+	$insertCommentIdQuery = "insert into comments (id,comments,thoughtId,email)
+							values($commentid,'$comment','$thoughtID','$email');";
+    $insertCommentIdQueryresult = mysqli_query($conn, $insertCommentIdQuery);
+    if($insertCommentIdQueryresult)
+	{
+		$_SESSION['update'] = 'Inserted Successfully';
+		header("Location:http://localhost/employeeSUS/admin/pages/thoughts.php");
 	}
 	else
 	{
 		$_SESSION['update'] = 'Error Occured';
-		header("Location:http://localhost/employeeSUS/admin/pages/changePassword.php");
+		header("Location:http://localhost/employeeSUS/admin/pages/thoughts.php");
 	}
-*/
 
+	
+	}
 	 
 ?>
