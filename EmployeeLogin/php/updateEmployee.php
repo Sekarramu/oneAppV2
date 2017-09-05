@@ -22,12 +22,12 @@ $address = $_POST['address'];
     if($updateEmployeeQueryresult)
 	{
 		$_SESSION['update'] = 'Updated Successfully';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/employeeHome.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/employeeHome.php");
 	}
 	else
 	{
 		$_SESSION['update'] = 'Error Occured';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/employeeHome.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/employeeHome.php");
 	}
 
 

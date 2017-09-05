@@ -15,12 +15,12 @@ $password = $_POST['newpassword'];
     if($updateEmployeeQueryresult)
 	{
 		$_SESSION['update'] = 'Updated Successfully';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/changePassword.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/changePassword.php");
 	}
 	else
 	{
 		$_SESSION['update'] = 'Error Occured';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/changePassword.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/changePassword.php");
 	}
 
 

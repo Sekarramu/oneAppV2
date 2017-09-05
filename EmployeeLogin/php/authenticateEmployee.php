@@ -16,7 +16,7 @@ if ($rowcount == FALSE) {
 
     $message = "You are not an valid user..!!";
 	$_SESSION['status'] = $message;
-	header("Location:http://localhost/EmployeeSUS/employeelogin/login.php");
+	header("Location:http://localhost/oneAppV2/EmployeeLogin/login.php");
 } else {
 
     $credentialsCheckQuery = "select Name,username,password,status from employeeinfo where username='$username'";
@@ -29,19 +29,19 @@ if ($rowcount == FALSE) {
 		$_SESSION['username'] = $dbpwd["Name"];
 		$_SESSION['loginID'] = $dbpwd["username"];
 		/*if($dbpwd["status"] == 'N'){
-			header("Location:http://localhost/EmployeeSUS/employeelogin/pages/employeeAdd.php");
+			header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/employeeAdd.php");
 		}*/
 	#	elseif($dbpwd["status"]  == 'Y') { 
-			header("Location:http://localhost/EmployeeSUS/employeelogin/pages/status.php");
+			header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/status.php");
        # }
 		/*else{
-			header("Location:http://localhost/EmployeeSUS/employeelogin/pages/employeeAdd.php");
+			header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/employeeAdd.php");
 		}*/
 	}
 	else{
 		$message = "Password you entered is wrong..!";
         $_SESSION['status'] = $message;
-		header("Location:http://localhost/EmployeeSUS/employeelogin/login.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/login.php");
     }
 }
 

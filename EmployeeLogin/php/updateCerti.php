@@ -18,12 +18,12 @@ $status = $_POST['status'];
     if($updateCertiQueryresult)
 	{
 		$_SESSION['update'] = 'Updated Successfully';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/status.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/status.php");
 	}
 	else
 	{
 		$_SESSION['update'] = 'Error Occured';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/status.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/status.php");
 	}
 
 

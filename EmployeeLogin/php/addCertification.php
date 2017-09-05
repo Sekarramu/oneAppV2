@@ -25,12 +25,12 @@ if($name <> NULL)
     if($insertCertiQueryresult)
 	{
 		$_SESSION['update'] = 'Inserted Successfully';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/status.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/status.php");
 	}
 	else
 	{
 		$_SESSION['update'] = 'Error Occured';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/status.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/status.php");
 	}
 
 	
@@ -38,6 +38,6 @@ if($name <> NULL)
 }
 else{
 	$_SESSION['update'] = 'Enter Certification Name';
-		header("Location:http://localhost/employeeSUS/employeelogin/pages/status.php");
+		header("Location:http://localhost/oneAppV2/EmployeeLogin/pages/status.php");
 	}
 ?>
